@@ -31,7 +31,7 @@ public class Kontener
     {
         if (masaLadunku > MaksymalnaLadownosc)
         {
-            throw new OverfillException();
+            throw new OverfillException("Próbowano załadować za dużo ładunku");
         }
         this.MasaLadunku = masaLadunku;
     }
@@ -62,6 +62,4 @@ public class Kontener
     }
 }
 
-public class OverfillException : Exception
-{
-}
+public class OverfillException(string msg) : Exception(msg);
