@@ -45,4 +45,14 @@ public class Kontener
     {
         Console.WriteLine(NumerSeryjny);
     }
+
+    public int getWagaWlasna()
+    {
+        return this.WagaWlasna;
+    }
+
+    public string getInfo()
+    {
+        return "Kontener: " + this.NumerSeryjny;
+    }
 }

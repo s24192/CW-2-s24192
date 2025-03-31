@@ -14,4 +14,8 @@ public class KontenerPlynowy : Kontener, IHazradModifier
     {
         throw new NotImplementedException();
     }
+    public string getInfo()
+    {
+        return "Kontener na plyny: " + this.NumerSeryjny;
+    }
 }

@@ -7,7 +7,7 @@ public class Kontenerowiec
     private string Nazwa { get; set; }
     private ArrayList kontenery;
     private int maksymalnaPrędkosc;
-    private int mkasymalnaLiczbaKontenerow;
+    private int maksymalnaLiczbaKontenerow;
     private double maksymalnaWagaKontenerow;
     private double aktualnaMasa = 0;
     private int atkualnaLiczbaKontenerów = 0;
@@ -16,7 +16,7 @@ public class Kontenerowiec
         this.Nazwa = Nazwa;
         kontenery = new ArrayList();
         this.maksymalnaPrędkosc = maksymalnaPrędkosc;
-        this.maksymalnaWagaKontenerow = maksymalnaLiczbaKontenerow;
+        this.maksymalnaLiczbaKontenerow = maksymalnaLiczbaKontenerow;
         this.maksymalnaWagaKontenerow = maksymalnaWagaKontenerow;
 
     }
@@ -25,14 +25,14 @@ public class Kontenerowiec
     {
         Console.WriteLine( "Top speed: " + maksymalnaPrędkosc + "\nMax load (tons): " + maksymalnaWagaKontenerow +
                "\nLoaded containers");
-        foreach (Kontenerowiec k in kontenery)
-            Console.WriteLine(k);
+        foreach (Kontener k in kontenery)
+            Console.WriteLine(k.getInfo());
         
     }
 
     public void addKontener(Kontener kont)
     {
-        if (kont.getMasaLadunku() <= aktualnaMasa && atkualnaLiczbaKontenerów <= mkasymalnaLiczbaKontenerow)
+        if (kont.getMasaLadunku() <= aktualnaMasa && atkualnaLiczbaKontenerów < maksymalnaLiczbaKontenerow)
         {
             kontenery.Add(kont);
             aktualnaMasa += kont.getMasaLadunku();
@@ -43,5 +43,19 @@ public class Kontenerowiec
         {
             Console.WriteLine("Nie można dodać kontenera");
         }
+    }
+
+    public void addKontenerList(List<Kontener> KontenerList)
+    {
+        double sumaMasy = 0;
+        foreach (var kontener in KontenerList)
+        {
+            sumaMasy += kontener.getMasaLadunku() + kontener.getWagaWlasna();
+        }
+        if (KontenerList.Count < maksymalnaLiczbaKontenerow && sumaMasy + aktualnaMasa > maksymalnaWagaKontenerow )
+        {
+            kontenery.AddRange(KontenerList);
+        }
+        Console.WriteLine("Nie można dodać kontenerów");
     }
 }

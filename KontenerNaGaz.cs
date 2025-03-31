@@ -21,4 +21,8 @@ public class KontenerNaGaz : Kontener, IHazradModifier
     {
         this.MasaLadunku = MasaLadunku * 0.05;
     }
+    public string getInfo()
+    {
+        return "Kontener na gaz: " + this.NumerSeryjny;
+    }
 }

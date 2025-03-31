@@ -13,4 +13,8 @@ public class KontenerChlodniczy : Kontener
         number++;
         this.RodzajProduktu = rodzajProduktu;
     }
+    public string getInfo()
+    {
+        return "Kontener chlodniczy: " + this.NumerSeryjny;
+    }
 }
