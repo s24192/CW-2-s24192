@@ -31,7 +31,7 @@ public class Kontener
     {
         if (masaLadunku > MaksymalnaLadownosc)
         {
-            throw new Exception();
+            throw new OverfillException();
         }
         this.MasaLadunku = masaLadunku;
     }
@@ -55,4 +55,13 @@ public class Kontener
     {
         return "Kontener: " + this.NumerSeryjny;
     }
+
+    public string getNumerSeryjny()
+    {
+        return this.NumerSeryjny;
+    }
+}
+
+public class OverfillException : Exception
+{
 }

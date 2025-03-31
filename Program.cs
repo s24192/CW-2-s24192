@@ -2,21 +2,28 @@
 
 using proj_1;
 
-Kontener kon = new Kontener(50,20,50,200);
-Kontener kon2 = new Kontener(50,20,50,200);
+Kontener kon = new Kontener(50,20,50,20);
+Kontener kon2 = new Kontener(50,20,50,20);
+Kontener kon3 = new Kontener(50,20,50,20);
+Kontener kon4 = new Kontener(50,20,50,20);
+Kontener kon5 = new Kontener(50,20,50,20);
+Kontener kon6 = new Kontener(50,20,50,20);
 KontenerNaGaz asd = new KontenerNaGaz(20,20,20,20);
-Kontenerowiec test =new Kontenerowiec("Pawełek", 100,20,40.4);
-KontenerChlodniczy kon3 = new KontenerChlodniczy( 20, 20, 20, 100,"banany");
+Kontenerowiec test =new Kontenerowiec("Pawełek", 40,20,50);
+KontenerChlodniczy kon12 = new KontenerChlodniczy( 20, 20, 20, 100,"banany");
 
 
-test.addKontener(kon3);
+test.addKontener(kon12);
 test.addKontener(kon);
 test.addKontener(kon2);
-test.addKontener(asd);
+test.addKontener(kon3);
+test.addKontener(kon4);
+test.addKontener(kon5);
+test.addKontener(kon6);
 
-kon.printSerialNumber();
-kon2.printSerialNumber();
-kon3.printSerialNumber();
 
+test.printInfo();
+
+test.removeKontener("asd-0");
 
 test.printInfo();
