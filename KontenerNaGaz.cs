@@ -14,13 +14,23 @@ public class KontenerNaGaz : Kontener, IHazradModifier
 
     public void hazardSituation()
     {
-        throw new NotImplementedException();
+        throw new HazardException("Niebezpieczne wydarzenie!!!");
     }
 
     public void oproznienieLadunku()
     {
         this.MasaLadunku = MasaLadunku * 0.05;
     }
+
+    public void zaladowanieLadunku(int masaZaladunku)
+    {
+        if (masaZaladunku > MaksymalnaLadownosc)
+        {
+            throw new OverfillException("Próbowano załadować za dużo gazu");
+        }
+        this.MasaLadunku = masaZaladunku;
+    }
+
     public string getInfo()
     {
         return "Kontener na gaz: " + this.NumerSeryjny;

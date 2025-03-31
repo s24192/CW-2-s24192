@@ -12,7 +12,7 @@ public class KontenerPlynowy : Kontener, IHazradModifier
 
     public void hazardSituation()
     {
-        throw new NotImplementedException();
+        throw new HazardException("Niebezpieczne wydarzenie!!!");
     }
     public string getInfo()
     {
