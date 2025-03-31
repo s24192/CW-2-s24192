@@ -46,6 +46,16 @@ public class Kontenerowiec
         }
     }
 
+    public Kontener getKontener(string numerSeryjny)
+    {
+        foreach (Kontener k  in Kontenery)
+        {
+            if (k.getNumerSeryjny() == numerSeryjny)
+                return k;
+        }
+         return null;
+    }
+
     public void addKontenerList(List<Kontener> KontenerList)
     {
         double sumaMasy = 0;
