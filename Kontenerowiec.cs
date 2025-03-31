@@ -36,7 +36,6 @@ public class Kontenerowiec
         {
             Kontenery.Add(kont);
             this.aktualnaMasa = aktualnaMasa +  kont.getMasaLadunku();
-            Console.WriteLine(this.aktualnaMasa);
             atkualnaLiczbaKontenerów++;
 
         }
